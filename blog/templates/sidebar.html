@@ -1,0 +1,163 @@
+{% load static %}
+			<!-- Sidebar-->
+
+			<div class="col-lg-3 col-lg-offset-1 col-md-4 col-sm-12 col-xs-12">
+				<aside aria-label="sidebar" class="sidebar sidebar-right">
+					<div class="widget">
+						<form class="w-search">
+							<input class="search input-standard-grey" required="required" placeholder="Search" type="search">
+							<button class="icon">
+								<i class="seoicon-loupe"></i>
+							</button>
+						</form>
+					</div>
+
+					<div class="widget w-post-category">
+						<div class="heading">
+							<h4 class="heading-title">Post Category</h4>
+							<div class="heading-line">
+								<span class="short-line"></span>
+								<span class="long-line"></span>
+							</div>
+						</div>
+						<div class="post-category-wrap">
+							{% for category,count in category_counts.items %}
+							<div class="category-post-item">
+								<span class="post-count">{{ count }}</span>
+								<a href="#" class="category-title">{{ category }}
+									<i class="seoicon-right-arrow"></i>
+								</a>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+
+					<div class="widget w-about">
+						<div class="heading">
+							<h4 class="heading-title">About Us and
+								This Blog</h4>
+							<div class="heading-line">
+								<span class="short-line"></span>
+								<span class="long-line"></span>
+							</div>
+							<p>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit
+								litterarum formas humanitatis per seacula quarta decima quinta.
+							</p>
+						</div>
+
+						<a href="02_abouts.html" class="btn btn-small btn-border c-primary">
+							<span class="text">Learn More</span>
+							<i class="seoicon-right-arrow"></i>
+						</a>
+					</div>
+
+					<div class="widget w-request bg-boxed-red" style="background-image: url({% static 'img/bg-boxed-dark.jpg' %});">
+						<div class="w-request-content">
+							<img loading="lazy" src="{% static 'img/request.png' %}" alt="request">
+							<h4 class="w-request-content-title">Request
+								a Free Quote</h4>
+							<p class="w-request-content-text">Gothica, quam nunc putamus parum claram, anteposuerit
+								litterarum formas humanitatis.
+							</p>
+
+							<a href="22_contacts.html" class="btn btn-small btn--dark btn-hover-shadow">
+								<span class="text">Contact Now</span>
+							</a>
+						</div>
+					</div>
+
+
+					<div class="widget w-follow">
+						<div class="heading">
+							<h4 class="heading-title">Follow Us</h4>
+							<div class="heading-line">
+								<span class="short-line"></span>
+								<span class="long-line"></span>
+							</div>
+						</div>
+
+						<div class="w-follow-wrap">
+							<div class="w-follow-item facebook-bg-color">
+								<a href="#" class="w-follow-social__item table-cell">
+									<i class="seoicon-social-facebook"></i>
+								</a>
+								<a href="#" class="w-follow-title table-cell">Facebook
+									<span class="w-follow-add">
+									<i class="seoicon-cross plus"></i>
+									<i class="seoicon-check-bold check"></i>
+								</span>
+								</a>
+							</div>
+							<div class="w-follow-item twitter-bg-color">
+								<a href="#" class="w-follow-social__item table-cell">
+									<i class=" seoicon-social-twitter"></i>
+								</a>
+								<a href="#" class="w-follow-title table-cell">Twitter
+									<span class="w-follow-add active">
+									<i class="seoicon-cross plus"></i>
+									<i class="seoicon-check-bold check"></i>
+								</span>
+								</a>
+							</div>
+							<div class="w-follow-item linkedin-bg-color">
+								<a href="#" class="w-follow-social__item table-cell">
+									<i class="seoicon-social-linkedin"></i>
+								</a>
+								<a href="#" class="w-follow-title table-cell">Linkedin
+									<span class="w-follow-add">
+									<i class="seoicon-cross plus"></i>
+									<i class="seoicon-check-bold check"></i>
+								</span>
+								</a>
+							</div>
+							<div class="w-follow-item google-bg-color">
+								<a href="#" class="w-follow-social__item table-cell">
+									<i class="seoicon-social-google-plus"></i>
+								</a>
+								<a href="#" class="w-follow-title table-cell">Google+
+									<span class="w-follow-add">
+									<i class="seoicon-cross plus"></i>
+									<i class="seoicon-check-bold check"></i>
+								</span>
+								</a>
+							</div>
+							<div class="w-follow-item pinterest-bg-color">
+								<a href="#" class="w-follow-social__item table-cell">
+									<i class="seoicon-social-pinterest"></i>
+								</a>
+								<a href="#" class="w-follow-title table-cell">Pinterest
+									<span class="w-follow-add">
+									<i class="seoicon-cross plus"></i>
+									<i class="seoicon-check-bold check"></i>
+								</span>
+								</a>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="widget w-tags">
+						<div class="heading">
+							<h4 class="heading-title">Popular Tags</h4>
+							<div class="heading-line">
+								<span class="short-line"></span>
+								<span class="long-line"></span>
+							</div>
+						</div>
+
+						<div class="tags-wrap">
+							<a href="#" class="w-tags-item">SEO</a>
+							<a href="#" class="w-tags-item">Advertising</a>
+							<a href="#" class="w-tags-item">Business</a>
+							<a href="#" class="w-tags-item">Optimization</a>
+							<a href="#" class="w-tags-item">Digital Marketing</a>
+							<a href="#" class="w-tags-item">Social</a>
+							<a href="#" class="w-tags-item">Keyword</a>
+							<a href="#" class="w-tags-item">Strategy</a>
+							<a href="#" class="w-tags-item">Audience</a>
+						</div>
+					</div>
+				</aside>
+			</div>
+
+			<!-- End Sidebar-->

@@ -1,0 +1,158 @@
+{% load static %}
+{% load markdown2_filter %}
+
+	<!-- Post Details -->
+
+
+	<div class="container">
+		<div class="row medium-padding120">
+			<main class="main">
+				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+					<article class="hentry post post-standard-details">
+
+						<div class="post-thumb">
+							<img loading="lazy" src="{{ post.blog_images.url }}" alt="seo">
+						</div>
+
+						<div class="post__content">
+
+							<h2 class="h2 post__title entry-title ">
+								<a href="#">{{post.blog_title }}</a>
+							</h2>
+
+
+							<div class="post-additional-info">
+
+								<div class="post__author author vcard">
+									<img loading="lazy" src="{% static 'img/avatar-b-details.png' %} " alt="author">
+									Posted by
+
+									<div class="post__author-name fn">
+										<a href="#" class="post__author-link">{{ post.posted_by }}</a>
+									</div>
+
+								</div>
+
+								<span class="post__date">
+
+								<i class="seoicon-clock"></i>
+
+								<time class="published" datetime="2016-03-20 12:00:00">
+									{{ post.pub_date }}
+								</time>
+
+							</span>
+
+								<span class="category">
+								<i class="seoicon-tags"></i>
+								<a href="#">{{ post.category }}</a>
+							</span>
+
+						
+
+							</div>
+
+							<div class="post__content-info" style="color: rgb(104, 101, 101);">
+
+                                {{ post.blog_post|markdown|safe }}
+                            </div>
+                            <br>
+								<div class="widget w-tags">
+									<div class="tags-wrap">
+										<a href="#" class="w-tags-item">{{ post.category }}</a>
+									</div>
+								</div>
+
+						</div>
+
+					</article>
+
+					<div class="pagination-arrow">
+						{% if previous_post %}
+						<a href="{% url 'post_page' previous_post.id %}" class="btn-prev-wrap">	
+							<svg class="btn-prev">
+								<use xlink:href="#arrow-left"></use>
+							</svg>
+							<div class="btn-content">
+								<div class="btn-content-title">Previous Post</div>
+							</div>
+						</a>
+						{% endif %}
+
+						{% if next_post %}
+						<a href="{% url 'post_page' next_post.id %}" class="btn-next-wrap">
+							<div class="btn-content">
+								<div class="btn-content-title">Next Post</div>
+							</div>
+							<svg class="btn-next">
+								<use xlink:href="#arrow-right"></use>
+							</svg>
+						</a>
+						{% endif %}
+
+					</div>
+
+
+					<div class="row">
+
+						<div class="leave-reply contact-form">
+
+							<form>
+
+								<div class="col-lg-12">
+									<div class="heading">
+										<h4 class="h1 heading-title">Leave a Comment</h4>
+										<div class="heading-line">
+											<span class="short-line"></span>
+											<span class="long-line"></span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-12">
+
+									<input class=" input-standard-grey" name="full_name" id="full_name" placeholder="Your Full Name" value="" type="text">
+
+								</div>
+
+								<div class="col-lg-6">
+
+									<input class=" input-standard-grey" name="comment_email" id="comment_email" placeholder="Email Address" value="" type="text">
+
+								</div>
+
+								<div class="col-lg-6">
+
+									<input class=" input-standard-grey" name="comment_website" id="comment_website" placeholder="Website" value="" type="text">
+
+								</div>
+
+								<div class="col-lg-12">
+
+									<textarea name="order_comments" class="input-text input-standard-grey" id="order_comments" placeholder="Your Comment"></textarea>
+
+								</div>
+
+								<div class="col-lg-12">
+
+									<div class="submit-block table">
+										<div class="col-lg-4 table-cell">
+											<div class="btn btn-small btn--primary">
+												<span class="text">Submit</span>
+											</div>
+										</div>
+
+										<div class="col-lg-8 table-cell">
+										</div>
+
+									</div>
+
+								</div>
+							</form>
+						</div>
+					</div>
+
+
+				</div>
+
+				<!-- End Post Details -->

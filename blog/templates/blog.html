@@ -1,0 +1,93 @@
+	{% load static %}
+	
+	<!-- Blog posts-->
+	<div class="container">
+		<div class="row medium-padding120">
+			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+				<main class="main">
+					{% for post in blog_posts %}
+					<article class="hentry post post-standard has-post-thumbnail">
+
+						<div class="post-thumb">
+							<img loading="lazy" src="{{ post.blog_images.url }}" alt="seo">
+							<div class="overlay"></div>
+							<a href="{{ post.blog_images.url }}" class="link-image js-zoom-image">
+								<i class="seoicon-zoom"></i>
+							</a>
+							<a href="#" class="link-post">
+								<i class="seoicon-link-bold"></i>
+							</a>
+						</div>
+
+						<div class="post__content">
+
+							<div class="post__author author vcard">
+								<img loading="lazy" src="{% static 'img/avatar6.png' %}" alt="author">
+								Posted by
+								<div class="post__author-name fn">
+									<a href="#" class="post__author-link">{{ post.posted_by }}</a>
+								</div>
+
+							</div>
+
+							<div class="post__content-info">
+
+								<h2 class="post__title entry-title ">
+									<a href="{% url 'post_page' post_id=post.id %}">{{post.blog_title}}</a>
+								</h2>
+
+								<div class="post-additional-info">
+
+									<span class="post__date">
+
+										<i class="seoicon-clock"></i>
+
+										<time class="published" datetime="2016-04-17 12:00:00">
+											{{ post.pub_date }}
+										</time>
+
+									</span>
+
+									<span class="category">
+										<i class="seoicon-tags"></i>
+										<a href="#">{{ post.category }}</a>
+									</span>
+
+									<span class="post__comments">
+										<a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i></a>
+										6
+									</span>
+
+								</div>
+
+								<p class="post__text">{{ post.blog_post|slice:":200" }}..</p>
+
+								<a href="{% url 'post_page' post_id=post.id %}" class="btn btn-small btn--dark btn-hover-shadow">
+									<span class="text">Continue Reading</span>
+									<i class="seoicon-right-arrow"></i>
+								</a>
+							</div>
+						</div>
+
+					</article>
+					{% endfor %}
+				</main>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<nav class="navigation">
+							{% if blog_posts.has_previous %}
+							
+							<a href="?page={{blog_posts.previous_page_number}}"> 
+								Previous
+							 </a>
+							{% endif %}
+							{% if blog_posts.has_next %}
+								<a href="?page={{blog_posts.next_page_number}}"> Next </a>
+							{% endif %}
+
+						</nav>
+					</div>
+				</div>
+			</div>
+
