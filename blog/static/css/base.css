@@ -700,6 +700,7 @@ input {
   background-color: #434141; }
   .bg-boxed-dark {
     background-image: url("{% static 'img/bg-boxed-dark.jpg' %}");
+
   }
   
   .bg-boxed-light {
