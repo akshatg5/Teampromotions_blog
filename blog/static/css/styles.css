@@ -662,31 +662,31 @@ input {
 
 .bg-greydark-color {
   background-color: #434141; }
+/* styles.css */
 
 .bg-boxed-dark {
-  background-image: url("{% static 'img/bg-boxed-dark.jpg' %}");
+  background-image: url("../img/bg-boxed-dark.jpg");
 }
 
 .bg-boxed-light {
-  background-image: url("{% static 'img/bg-boxed-light.jpg' %}");
+  background-image: url("../img/bg-boxed-light.jpg");
 }
 
 .bg-boxed-red {
-  background-image: url("{% static 'img/bg-boxed-red.jpg' %}");
+  background-image: url("../img/bg-boxed-red.jpg");
 }
 
 .bg-boxed-primary {
-  background-image: url("{% static 'img/bg-boxed-primary.jpg' %}");
+  background-image: url("../img/bg-boxed-primary.jpg");
 }
 
 .bg-boxed-black {
-  background-image: url("{% static 'img/bg-boxed-black.jpg' %}");
+  background-image: url("../img/bg-boxed-black.jpg");
 }
 
 .bg-boxed-blue {
-  background-image: url("{% static 'img/bg-boxed-blue.jpg' %}");
+  background-image: url("../img/bg-boxed-blue.jpg");
 }
-
 .border-orange-color {
   border-color: #fcb03b; }
 
