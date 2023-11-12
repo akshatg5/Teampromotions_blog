@@ -1,21 +1,22 @@
-
 @font-face {
   font-family: 'Varela Round';
   font-style: normal;
   font-weight: 400;
-  src: url('{% static "fonts/varelaround-regular-webfont.woff2" %}') format('woff2'),
-       url('{% static "fonts/varelaround-regular-webfont.woff" %}') format('woff');
+  src: url('/static/fonts/varelaround-regular-webfont.woff2') format('woff2'),
+       url('/static/fonts/varelaround-regular-webfont.woff') format('woff');
 }
 
+
 @font-face {
-  font-family: 'seosight',Arial, sans-serif;
+  font-family: 'seosight', Arial, sans-serif;
   src:
-    url('{% static "fonts/seosight.ttf" %}') format('truetype'),
-    url('{% static "fonts/seosight.woff" %}') format('woff'),
-    url('{% static "fonts/seosight.svg#seosight" %}') format('svg');
+    url('/static/fonts/seosight.ttf') format('truetype'),
+    url('/static/fonts/seosight.woff') format('woff'),
+    url('/static/fonts/seosight.svg#seosight') format('svg');
   font-weight: normal;
   font-style: normal;
 }
+
 
 [class^="seoicon-"], [class*=" seoicon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
