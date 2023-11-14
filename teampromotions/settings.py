@@ -84,9 +84,13 @@ if not DEBUG:
     }
 else :
     DATABASES = {
-        'default' : {
-            'ENGINE' : 'django.db.backends.sqlite3',
-            'NAME' : BASE_DIR / 'db.sqlite3'
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER' : 'postgres',
+        'PASSWORD' : '5264g4E*A*e5eBDDEgafa42Bb3A2-12F',
+        'HOST' : 'monorail.proxy.rlwy.net',
+        'PORT' : '19505'
         }
     }
 
