@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 import psycopg2
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-q%+alxz%&#!#n_*)1)axdl2x^0%a+zt__ds39*6vna+^v&r7!i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ('DEBUG','True') == "True"
 
 ALLOWED_HOSTS = ['127.0.0.1','localhost','teampromotions-blog.onrender.com']
 
@@ -77,16 +78,17 @@ WSGI_APPLICATION = 'teampromotions.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER' : 'postgres',
-        'PASSWORD' : '5264g4E*A*e5eBDDEgafa42Bb3A2-12F',
-        'HOST' : 'monorail.proxy.rlwy.net',
-        'PORT' : '19505'
+if not DEBUG:
+    DATABASES = {
+        "default" : dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
-}
+else :
+    DATABASES = {
+        'default' : {
+            'ENGINE' : 'django.db.backends.sqlite3',
+            'NAME' : BASE_DIR / 'db.sqlite3'
+        }
+    }
 
 
 # Password validation

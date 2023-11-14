@@ -51,22 +51,6 @@
 						</a>
 					</div>
 
-					<div class="widget w-request bg-boxed-red">
-						<div class="w-request-content">
-							<img loading="lazy" src="{% static 'img/request.png' %}" alt="request">
-							<h4 class="w-request-content-title">Request
-								a Free Quote</h4>
-							<p class="w-request-content-text">Gothica, quam nunc putamus parum claram, anteposuerit
-								litterarum formas humanitatis.
-							</p>
-
-							<a href="22_contacts.html" class="btn btn-small btn--dark btn-hover-shadow">
-								<span class="text">Contact Now</span>
-							</a>
-						</div>
-					</div>
-
-
 					<div class="widget w-follow">
 						<div class="heading">
 							<h4 class="heading-title">Follow Us</h4>
@@ -145,17 +129,11 @@
 							</div>
 						</div>
 
-						<div class="tags-wrap">
-							<a href="#" class="w-tags-item">SEO</a>
-							<a href="#" class="w-tags-item">Advertising</a>
-							<a href="#" class="w-tags-item">Business</a>
-							<a href="#" class="w-tags-item">Optimization</a>
-							<a href="#" class="w-tags-item">Digital Marketing</a>
-							<a href="#" class="w-tags-item">Social</a>
-							<a href="#" class="w-tags-item">Keyword</a>
-							<a href="#" class="w-tags-item">Strategy</a>
-							<a href="#" class="w-tags-item">Audience</a>
-						</div>
+						{% for category in category_counts %}
+							<div class="tags-wrap">
+								<a href="#" class="w-tags-item">{{ category }}</a>
+							</div>
+						{% endfor %}
 					</div>
 				</aside>
 			</div>
