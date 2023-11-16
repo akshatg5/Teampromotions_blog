@@ -60,7 +60,7 @@
 
 								</div>
 
-								<p class="post__text">{{ post.blog_post|markdown|safeslice:":200" }}..</p>
+								<p class="post__text">{{ post.blog_post|markdown|safe|slice:":200" }}..</p>
 
 								<a href="{% url 'post_page' post_id=post.id %}" class="btn btn-small btn--dark btn-hover-shadow">
 									<span class="text">Continue Reading</span>
