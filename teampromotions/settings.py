@@ -78,16 +78,14 @@ WSGI_APPLICATION = 'teampromotions.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER' : 'postgres',
-        'PASSWORD' : 'b3FBADgA2Bc*4BgEAB411gEd6Be1Dg*D',
-        'HOST' : 'monorail.proxy.rlwy.net',
-        'PORT' : '42522'
-        }
-    }
+if not DEBUG:
+    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'db.sqlite3',
+        }}
 
 
 # Password validation
