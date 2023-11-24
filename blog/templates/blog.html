@@ -13,10 +13,10 @@
 							<img loading="lazy" src="{{ post.blog_images.url }}" alt="seo">
 							<div class="overlay"></div>
 							<a href="{{ post.blog_images.url }}" class="link-image js-zoom-image">
-								<i class="seoicon-zoom"></i>
+								<span>🔎</span>
 							</a>
 							<a href="#" class="link-post">
-								<i class="seoicon-link-bold"></i>
+								<span>🖇️</span>
 							</a>
 						</div>
 
@@ -74,14 +74,13 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<nav class="navigation">
-							{% if blog_posts.has_previous %}
-							
-							<a href="?page={{blog_posts.previous_page_number}}"> 
-								Previous
+							{% if blog_posts.has_previous %} 
+							<a href="?page={{blog_posts.previous_page_number}}"  style="color: black; font-size: 25px;"> 
+								←Previous
 							 </a>
 							{% endif %}
 							{% if blog_posts.has_next %}
-								<a href="?page={{blog_posts.next_page_number}}"> Next </a>
+								<a href="?page={{blog_posts.next_page_number}}" style="color: black; font-size: 25px;"> Next→</a>
 							{% endif %}
 
 						</nav>
